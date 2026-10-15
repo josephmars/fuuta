@@ -7,7 +7,7 @@ The hat logo is drawn as vectors in `tools/make_brand.py` and exported to `desig
 | `design/icon-app.svg` -> `icon-192/512.png`, `apple-touch-icon.png` | `app/icons/` | Home Screen icon: brown hat on olive, with the FUUTA wordmark and no small text |
 | `design/icon-maskable.svg` -> `icon-maskable-192/512.png` | `app/icons/` | Android adaptive icon (art kept inside the safe zone) |
 | `design/icon-site.svg`, `design/favicon.svg` -> `favicon.svg`, `favicon-32.png` | `app/icons/` | Browser tab icon: hat only |
-| `design/logo.svg` | README and Learn screen | Hat + FUUTA + "Learn Mauritanian Pulaar" on cream |
+| `design/logo.svg` | `design/` | README header (not shown in the app) | Hat + FUUTA + "Learn Mauritanian Pulaar" on cream |
 | `design/icon-collection-mock.png` | `design/` | The original mock the hat idea came from (reference only) |
 
 ## Regenerating

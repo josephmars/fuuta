@@ -7,7 +7,7 @@ Outputs
   design/icon-maskable.svg  Android maskable icon (art inside the safe zone)
   design/icon-site.svg   Website/tab icon: hat only on olive
   design/logo.svg        Logo for README and app header: hat + wordmark + tagline on cream
-  app/icons/*            PNG sizes, maskable icons, favicon, logo
+  app/icons/*            PNG sizes, maskable icons, favicon
 
 Text is converted to paths (macOS Georgia Bold / Helvetica Bold), so the SVGs need no fonts.
 Rasterising uses headless Chrome (set CHROME to override its path).
@@ -134,7 +134,6 @@ def main() -> int:
             mask.resize((sz, sz), Image.LANCZOS).save(ICONS / name, optimize=True)
         site.resize((32, 32), Image.LANCZOS).save(ICONS / "favicon-32.png", optimize=True)
     shutil.copy(DESIGN / "favicon.svg", ICONS / "favicon.svg")
-    shutil.copy(DESIGN / "logo.svg", ICONS / "logo.svg")
     print("wrote design/*.svg and", ", ".join(sorted(p.name for p in ICONS.iterdir())))
     return 0
 
