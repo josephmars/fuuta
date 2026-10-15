@@ -13,7 +13,10 @@
       "sources": [
         "mr-pc-intro"
       ],
-      "usage": "Use at any time of the day."
+      "usage": "Use at any time of the day.",
+      "tags": [
+        "essential"
+      ]
     },
     {
       "id": "greetings-maaleykum-salaam",
@@ -24,7 +27,10 @@
       "sources": [
         "mr-pc-intro"
       ],
-      "usage": "The reply to Assalaa Maaleykum."
+      "usage": "The reply to Assalaa Maaleykum.",
+      "tags": [
+        "essential"
+      ]
     },
     {
       "id": "greetings-jam-waali",
@@ -40,6 +46,9 @@
           "source": "gm-pc-tape-2013",
           "pulaar": "Jam wali"
         }
+      ],
+      "tags": [
+        "essential"
       ]
     },
     {
@@ -50,6 +59,9 @@
       "status": "verified",
       "sources": [
         "mr-pc-intro"
+      ],
+      "tags": [
+        "essential"
       ]
     },
     {
@@ -67,6 +79,9 @@
           "pulaar": "Jam hiiri",
           "note": "Gambia course glosses this as 'good night'"
         }
+      ],
+      "tags": [
+        "essential"
       ]
     },
     {
@@ -78,7 +93,10 @@
       "sources": [
         "mr-pc-intro"
       ],
-      "usage": "A greeting question. Reply: Jam tan."
+      "usage": "A greeting question. Reply: Jam tan.",
+      "tags": [
+        "essential"
+      ]
     },
     {
       "id": "greetings-jam-tan",
@@ -89,7 +107,10 @@
       "sources": [
         "mr-pc-intro"
       ],
-      "usage": "The reply to On ngoni e jam?, and to how the work is going."
+      "usage": "The reply to On ngoni e jam?, and to how the work is going.",
+      "tags": [
+        "essential"
+      ]
     },
     {
       "id": "greetings-no-mba-aa",
@@ -106,6 +127,9 @@
           "pulaar": "Hono mbaɗaa?",
           "note": "Gambian form"
         }
+      ],
+      "tags": [
+        "essential"
       ]
     },
     {
@@ -117,7 +141,10 @@
       "sources": [
         "mr-pc-intro"
       ],
-      "usage": "The reply to No mbaɗ-ɗaa? and No mbaɗ-ɗaa e tampere?"
+      "usage": "The reply to No mbaɗ-ɗaa? and No mbaɗ-ɗaa e tampere?",
+      "tags": [
+        "essential"
+      ]
     },
     {
       "id": "greetings-no-esngu-maa-wai",
@@ -182,7 +209,10 @@
       "sources": [
         "mr-pc-intro"
       ],
-      "usage": "Said to welcome someone."
+      "usage": "Said to welcome someone.",
+      "tags": [
+        "essential"
+      ]
     },
     {
       "id": "greetings-mba",

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Dialogue",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "title", "order", "turns"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+    "title": {"type": "string", "minLength": 1},
+    "description": {"type": "string"},
+    "order": {"type": "integer", "minimum": 1},
+    "turns": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["speaker", "item"],
+        "properties": {
+          "speaker": {"enum": ["them", "you"]},
+          "item": {"type": "string", "description": "Id of the line, taken from a unit"},
+          "distractors": {"type": "array", "minItems": 2, "maxItems": 3, "items": {"type": "string"},
+                          "description": "Wrong choices shown on a 'you' turn; must be clearly wrong replies"}
+        }
+      }
+    }
+  }
+}

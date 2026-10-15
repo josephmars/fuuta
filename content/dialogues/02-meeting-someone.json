@@ -1,0 +1,44 @@
+{
+  "id": "meeting-someone",
+  "title": "Meeting someone new",
+  "order": 2,
+  "description": "Greet, say you speak a little Pulaar, and give your name. Replace Kalidou with your own name when you say it for real.",
+  "turns": [
+    {
+      "speaker": "them",
+      "item": "greetings-assalaa-maaleykum"
+    },
+    {
+      "speaker": "you",
+      "item": "greetings-maaleykum-salaam",
+      "distractors": [
+        "everyday-mi-tampii",
+        "leave-taking-haa-jango"
+      ]
+    },
+    {
+      "speaker": "them",
+      "item": "everyday-aa-nana-pulaar"
+    },
+    {
+      "speaker": "you",
+      "item": "everyday-eey-mbee-nana-pulaar-seea",
+      "distractors": [
+        "everyday-alaa",
+        "leave-taking-ngonen-e-jam"
+      ]
+    },
+    {
+      "speaker": "them",
+      "item": "everyday-hol-no-mbiyete-aa"
+    },
+    {
+      "speaker": "you",
+      "item": "everyday-mbiyetee-mi-ko-kalidou",
+      "distractors": [
+        "everyday-paa-mi-ko-galle",
+        "everyday-ina-wuli"
+      ]
+    }
+  ]
+}

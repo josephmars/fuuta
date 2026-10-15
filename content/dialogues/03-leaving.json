@@ -1,0 +1,32 @@
+{
+  "id": "leaving",
+  "title": "Excusing yourself and leaving",
+  "order": 3,
+  "description": "Ask where someone is going, answer, and excuse yourself politely.",
+  "turns": [
+    {
+      "speaker": "them",
+      "item": "everyday-holto-paaa"
+    },
+    {
+      "speaker": "you",
+      "item": "everyday-paa-mi-ko-galle",
+      "distractors": [
+        "everyday-mbiyetee-mi-ko-kalidou",
+        "greetings-jam-hiiri"
+      ]
+    },
+    {
+      "speaker": "you",
+      "item": "everyday-yaafo-mi",
+      "distractors": [
+        "greetings-bismilla",
+        "food-market-maaro"
+      ]
+    },
+    {
+      "speaker": "them",
+      "item": "everyday-a-yaafaama"
+    }
+  ]
+}

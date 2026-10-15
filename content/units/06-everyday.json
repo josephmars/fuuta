@@ -13,7 +13,10 @@
       "sources": [
         "mr-pc-intro"
       ],
-      "usage": "Introducing yourself. Replace Kalidou with your own name."
+      "usage": "Introducing yourself. Replace Kalidou with your own name.",
+      "tags": [
+        "essential"
+      ]
     },
     {
       "id": "everyday-hol-no-mbiyete-aa",
@@ -24,7 +27,10 @@
       "sources": [
         "mr-pc-intro"
       ],
-      "usage": "Asking someone's name. Reply: Mbiyetee-mi ko ..."
+      "usage": "Asking someone's name. Reply: Mbiyetee-mi ko ...",
+      "tags": [
+        "essential"
+      ]
     },
     {
       "id": "everyday-njeyaa-mi-ko-moritani",
@@ -56,7 +62,10 @@
       "sources": [
         "mr-pc-intro"
       ],
-      "usage": "Said to excuse yourself. The reply is A yaafaama."
+      "usage": "Said to excuse yourself. The reply is A yaafaama.",
+      "tags": [
+        "essential"
+      ]
     },
     {
       "id": "everyday-a-yaafaama",
@@ -67,7 +76,10 @@
       "sources": [
         "mr-pc-intro"
       ],
-      "usage": "The reply to Yaafo-mi."
+      "usage": "The reply to Yaafo-mi.",
+      "tags": [
+        "essential"
+      ]
     },
     {
       "id": "everyday-holto-paaa",
@@ -77,6 +89,9 @@
       "status": "verified",
       "sources": [
         "mr-pc-intro"
+      ],
+      "tags": [
+        "essential"
       ]
     },
     {
@@ -98,7 +113,10 @@
       "sources": [
         "mr-pc-intro"
       ],
-      "usage": "Asking if someone speaks Pulaar. Reply: Eey mbeɗe nana Pulaar seeɗa."
+      "usage": "Asking if someone speaks Pulaar. Reply: Eey mbeɗe nana Pulaar seeɗa.",
+      "tags": [
+        "essential"
+      ]
     },
     {
       "id": "everyday-eey-mbee-nana-pulaar-seea",
@@ -108,6 +126,9 @@
       "status": "verified",
       "sources": [
         "mr-pc-intro"
+      ],
+      "tags": [
+        "essential"
       ]
     },
     {
@@ -118,6 +139,9 @@
       "status": "verified",
       "sources": [
         "mr-pc-intro"
+      ],
+      "tags": [
+        "essential"
       ]
     },
     {
@@ -159,6 +183,9 @@
       "status": "verified",
       "sources": [
         "mr-pc-intro"
+      ],
+      "tags": [
+        "essential"
       ]
     },
     {
@@ -169,6 +196,9 @@
       "status": "verified",
       "sources": [
         "mr-pc-intro"
+      ],
+      "tags": [
+        "essential"
       ]
     }
   ]

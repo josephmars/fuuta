@@ -107,3 +107,25 @@ button.item em { font-style: normal; width: 18px; text-align: center; color: var
 label.btn { cursor: pointer; }
 a:not(.btn):not(.back) { color: var(--olive-d); font-weight: 700; }
 #tabs a { padding-left: 0; padding-right: 0; font-size: 10.5px; }
+
+/* alphabet, trip, role-play */
+.unit .ico.alt { background: var(--gold); box-shadow: 0 4px 0 #a98122; font-size: 20px; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 10px; }
+.tile { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 12px 8px; text-align: center; }
+.tile b { font-size: 30px; display: block; }
+.tile small { color: var(--muted); font-weight: 600; }
+.trip { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 14px 16px; margin-bottom: 10px; }
+.trip b { font-size: 24px; display: block; letter-spacing: -.01em; overflow-wrap: anywhere; }
+.trip span { color: var(--olive-d); font-weight: 700; }
+.trip small { display: block; color: var(--muted); margin-top: 4px; }
+.chat { display: flex; flex-direction: column; gap: 8px; margin: 10px 0 14px; }
+.bub { max-width: 82%; padding: 10px 14px; border-radius: 18px; overflow-wrap: anywhere; }
+.bub b { display: block; font-size: 18px; }
+.bub small { color: var(--muted); }
+.bub.them { align-self: flex-start; background: var(--card); border: 1px solid var(--line); border-bottom-left-radius: 6px; }
+.bub.you { align-self: flex-end; background: #dfe8cf; border-bottom-right-radius: 6px; }
+.sheet.plain { background: var(--bg); box-shadow: 0 -6px 20px rgba(60,50,30,.08); }
+.chat + .q-lab { margin-top: 18px; }
+.empty .sub { margin-bottom: 4px; }
+body:has(.sheet) main { padding-bottom: 220px; }
+.badge.ok { background: var(--ok-bg); color: var(--ok); }

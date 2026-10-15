@@ -45,7 +45,7 @@ const ICONS = {
   progress: '<path d="M5 20V11M12 20V5M19 20v-6"/>',
 };
 const TABS = [["learn", "Learn"], ["path", "Path"], ["dictionary", "Words"], ["quiz", "Quiz"], ["progress", "Progress"]];
-const TAB_OF = { unit: "path", word: "dictionary" }; // detail pages keep their parent tab lit
+const TAB_OF = { unit: "path", word: "dictionary", alphabet: "path", roleplays: "path", trip: "learn" }; // detail pages keep their parent tab lit
 
 function route() { return (location.hash.replace(/^#\/?/, "") || "learn").split("/"); }
 const go = h => { location.hash = h; };
@@ -57,15 +57,16 @@ function render() {
   tabs.innerHTML = TABS.map(([k, l]) =>
     `<a href="#/${k}" class="${(TAB_OF[page] || page) === k ? "on" : ""}"><svg viewBox="0 0 24 24">${ICONS[k]}</svg>${l}</a>`).join("");
   const view = $("#view");
-  if (session) view.innerHTML = session.kind === "quiz" ? quizView() : studyView();
+  if (session) view.innerHTML = session.kind === "quiz" ? quizView() : session.kind === "roleplay" ? roleplayView() : studyView();
   else view.innerHTML = ({ learn: learnView, path: pathView, dictionary: dictView, quiz: quizSetup, progress: progressView,
-    unit: () => unitView(arg), word: () => wordView(arg) }[page] || learnView)();
+    unit: () => unitView(arg), word: () => wordView(arg), alphabet: alphabetView, roleplays: roleplayList, trip: tripView }[page] || learnView)();
   window.scrollTo(0, 0);
 }
 
 const header = (title, sub) => `<div class="top"><div><h1>${title}</h1>${sub ? `<p class="sub">${sub}</p>` : ""}</div>
   <span class="chip">🔥 ${streak()}</span></div>`;
-const badge = it => it.status === "needs-review" ? `<span class="badge">check spelling</span>` : "";
+const badge = it => it.status === "needs-review" ? `<span class="badge">check spelling</span>`
+  : it.confirmed ? `<span class="badge ok">native-checked</span>` : "";
 
 // ---------- Learn (flashcards) ----------
 function buildQueue(unitId) {
@@ -86,7 +87,8 @@ function learnView() {
       <div class="rule"></div>
       <div class="hint">${due.length ? `${nDue} to review · ${nNew} new` : "Come back tomorrow, or practise in Quiz."}</div></div>
     <div style="margin-top:22px">${due.length ? `<button class="btn" data-act="study" data-unit="">Start</button>` : ""}
-    <a class="btn alt" href="#/quiz" style="text-decoration:none">Play a quiz</a></div>`;
+    <a class="btn alt" href="#/quiz" style="text-decoration:none">Play a quiz</a>
+    <a class="btn alt" href="#/trip" style="text-decoration:none">Trip phrases</a></div>`;
 }
 
 function startStudy(unitId) {
@@ -128,7 +130,11 @@ function pathView() {
       <div style="flex:1"><b>${esc(u.title)}</b><span class="sub">${st.n} phrases · ${st.k} learned</span>
       <div class="bar"><i style="width:${st.pct}%"></i></div></div></button>`;
   }).join("");
-  return `${header("Path", "Mauritanian Pulaar")}${units}`;
+  const extra = `<button class="unit" data-go="alphabet"><div class="ico alt">Aa</div><div style="flex:1"><b>Alphabet and sounds</b>
+      <span class="sub">${DATA.alphabet.letters.length} letters, incl. ɓ ɗ ŋ ƴ</span></div></button>
+    <button class="unit" data-go="roleplays"><div class="ico alt">💬</div><div style="flex:1"><b>Role-plays</b>
+      <span class="sub">${DATA.dialogues.length} short conversations</span></div></button>`;
+  return `${header("Path", "Mauritanian Pulaar")}${extra}<h2>Topics</h2>${units}`;
 }
 
 const usageBlock = it => it.usage ? `<div class="usage"><small>When to use</small>${esc(it.usage)}</div>` : "";
@@ -188,6 +194,81 @@ function unitView(id) {
       <button class="btn" data-act="study" data-unit="${u.id}">Study</button>
       <button class="btn alt" data-act="quiz-unit" data-unit="${u.id}" style="margin:0">Quiz</button></div>
     <h2>Phrasebook</h2>${listItems(u.items)}`;
+}
+
+// ---------- Alphabet, trip phrases, role-plays ----------
+const GROUPS = [["vowel", "Short vowels"], ["long-vowel", "Double vowels"], ["consonant", "Consonants"],
+  ["implosive", "Implosives (ɓ ɗ ƴ)"], ["prenasalized", "Prenasalized"]];
+function alphabetView() {
+  const A = DATA.alphabet;
+  const sections = GROUPS.map(([g, label]) => {
+    const ls = A.letters.filter(l => l.group === g);
+    return ls.length ? `<h2>${label}</h2><div class="tiles">${ls.map(l => `<div class="tile"><b>${esc(l.letter)}</b>
+      <small>${l.like ? `like “${esc(l.like)}”` : "no English match"}</small></div>`).join("")}</div>` : "";
+  }).join("");
+  return `<a class="back" href="#/path">‹ Path</a><h1>${esc(A.title)}</h1><p class="sub">${esc(A.description)}</p>${sections}`;
+}
+
+function tripView() {
+  const groups = DATA.units.map(u => ({ u, items: u.items.filter(i => (i.tags || []).includes("essential")) })).filter(g => g.items.length);
+  return `<a class="back" href="#/learn">‹ Learn</a><h1>Trip phrases</h1><p class="sub">The essentials, one tap away.</p>
+    ${groups.map(g => `<h2>${esc(g.u.title)}</h2>${g.items.map(i => `<div class="trip"><b>${esc(i.pulaar)}</b><span>${esc(i.english)}</span>${i.usage ? `<small>${esc(i.usage)}</small>` : ""}</div>`).join("")}`).join("")}`;
+}
+
+function roleplayList() {
+  return `<a class="back" href="#/path">‹ Path</a><h1>Role-plays</h1>
+    <p class="sub">Short conversations built from verified phrases. Pick the right reply.</p>
+    <div style="margin-top:16px">${DATA.dialogues.map(d => `<button class="unit" data-act="rp-start" data-id="${d.id}">
+      <div class="ico alt">💬</div><div style="flex:1"><b>${esc(d.title)}</b><span class="sub">${esc(d.description)}</span></div></button>`).join("")}</div>`;
+}
+
+const bubble = t => `<div class="bub ${t.speaker}"><b>${esc(t.pulaar)}</b><small>${esc(t.english)}</small></div>`;
+function roleplayView() {
+  const s = session, d = s.d, done = s.i >= d.turns.length;
+  const log = s.log.map(bubble).join("");
+  const head = `<div class="sess-top"><button class="x" data-act="end" aria-label="Close">×</button>
+    <div class="dashes">${d.turns.map((t, k) => `<i class="${k < s.i ? "c" : ""}"></i>`).join("")}</div></div><div class="q-lab">${esc(d.title)}</div>`;
+  if (done) {
+    return `${head}<div class="chat">${log}</div><div class="empty"><div class="big">Conversation done</div>
+      <p class="sub">${s.right} of ${s.replies} replies right the first time. +${s.xp} XP</p>
+      <button class="btn" data-act="end" style="margin-top:16px">Done</button></div>`;
+  }
+  const t = d.turns[s.i];
+  if (t.speaker === "them") {
+    return `${head}<div class="chat">${log}${bubble(t)}</div><div class="sheet plain"><div><button class="btn" data-act="rp-next">Continue</button></div></div>`;
+  }
+  if (!s.opts) s.opts = shuffle([t, ...t.distractors]);
+  const opts = s.opts.map((o, k) => {
+    const cls = s.picked == null ? "" : o.id === t.id ? "ok" : k === s.picked ? "bad" : "";
+    return `<button class="opt ${cls}" data-rp="${k}" ${s.picked != null ? "disabled" : ""}>${esc(o.pulaar)}</button>`;
+  }).join("");
+  const right = s.picked != null && s.opts[s.picked].id === t.id;
+  const sheet = s.picked == null ? "" : `<div class="sheet ${right ? "ok" : "bad"}"><div><b>${right ? "Exactly!" : "Not quite"}</b>
+    <p>${right ? esc(t.english) : `Better: ${esc(t.pulaar)} (${esc(t.english)})`}</p><button class="btn" data-act="rp-next">Continue</button></div></div>`;
+  return `${head}<div class="chat">${log}</div><div class="q-lab">Your reply</div>${opts}${sheet}`;
+}
+
+function startRoleplay(id) {
+  const d = DATA.dialogues.find(x => x.id === id);
+  if (d) { session = { kind: "roleplay", d, i: 0, log: [], opts: null, picked: null, right: 0, replies: 0, wrongHere: false, xp: 0 }; render(); }
+}
+function rpPick(k) {
+  const s = session, t = s.d.turns[s.i];
+  if (s.picked != null) return;
+  s.picked = k;
+  if (s.opts[k].id === t.id) { if (!s.wrongHere) { s.right++; s.xp += 5; S.xp += 5; } touch(); save(); }
+  else s.wrongHere = true;
+  render();
+}
+function rpNext() {
+  const s = session, t = s.d.turns[s.i];
+  if (t.speaker === "you") {
+    if (s.picked == null || s.opts[s.picked].id !== t.id) { // wrong: let them try again on the same turn
+      s.picked = null; render(); return;
+    }
+    s.replies++;
+  }
+  s.log.push(t); s.i++; s.opts = null; s.picked = null; s.wrongHere = false; render();
 }
 
 // ---------- Quiz ----------
@@ -319,8 +400,9 @@ const byId = id => ITEMS.find(i => i.id === id);
 
 document.addEventListener("click", e => {
   if (e.target.closest("textarea, input, label")) return; // typing/choosing a file must not flip cards
-  const t = e.target.closest("[data-act],[data-go],[data-mode],[data-opt],[data-dict-f]");
+  const t = e.target.closest("[data-act],[data-go],[data-mode],[data-opt],[data-dict-f],[data-rp]");
   if (!t) return;
+  if (t.dataset.rp != null) return rpPick(+t.dataset.rp);
   if (t.dataset.go) return go(t.dataset.go);
   if (t.dataset.dictF) { DICT.f = t.dataset.dictF; return render(); }
   if (t.dataset.mode) { S.mode = t.dataset.mode; save(); return render(); }
@@ -339,6 +421,8 @@ document.addEventListener("click", e => {
     case "quiz-unit": return startQuiz(t.dataset.unit);
     case "next": s.i++; return render();
     case "end": session = null; return render();
+    case "rp-start": return startRoleplay(t.dataset.id);
+    case "rp-next": return rpNext();
     case "export-file": return exportFile();
     case "export-copy": return exportCopy();
     case "import-text": {

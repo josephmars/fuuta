@@ -1,0 +1,68 @@
+{
+  "id": "greeting-exchange",
+  "title": "Greeting a host",
+  "order": 1,
+  "description": "The standard greeting exchange when you arrive. Answer each greeting.",
+  "turns": [
+    {
+      "speaker": "them",
+      "item": "greetings-assalaa-maaleykum"
+    },
+    {
+      "speaker": "you",
+      "item": "greetings-maaleykum-salaam",
+      "distractors": [
+        "leave-taking-ngonen-e-jam",
+        "food-market-mi-heyi"
+      ]
+    },
+    {
+      "speaker": "them",
+      "item": "greetings-on-ngoni-e-jam"
+    },
+    {
+      "speaker": "you",
+      "item": "greetings-jam-tan",
+      "distractors": [
+        "leave-taking-aamin",
+        "everyday-mi-tampii"
+      ]
+    },
+    {
+      "speaker": "them",
+      "item": "greetings-no-mba-aa"
+    },
+    {
+      "speaker": "you",
+      "item": "greetings-ko-mawum",
+      "distractors": [
+        "leave-taking-haa-jango",
+        "everyday-alaa"
+      ]
+    },
+    {
+      "speaker": "them",
+      "item": "greetings-no-mba-aa-e-liggeey"
+    },
+    {
+      "speaker": "you",
+      "item": "greetings-jam-tan",
+      "distractors": [
+        "leave-taking-nallen-e-jam",
+        "food-market-mi-omii"
+      ]
+    },
+    {
+      "speaker": "them",
+      "item": "greetings-no-mba-aa-e-tampere"
+    },
+    {
+      "speaker": "you",
+      "item": "greetings-ko-mawum",
+      "distractors": [
+        "leave-taking-ngonen-e-jam",
+        "everyday-eey"
+      ]
+    }
+  ]
+}

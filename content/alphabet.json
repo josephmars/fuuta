@@ -1,0 +1,190 @@
+{
+  "id": "alphabet",
+  "title": "Alphabet and sounds",
+  "description": "Letters of Pulaar as taught in the Peace Corps/Mauritania course, with an English word that has a similar sound. Letters marked 'no equivalent' have no English match, so listen to a native speaker.",
+  "sources": [
+    "mr-pc-intro"
+  ],
+  "letters": [
+    {
+      "letter": "i",
+      "group": "vowel",
+      "like": "kit"
+    },
+    {
+      "letter": "e",
+      "group": "vowel",
+      "like": "met"
+    },
+    {
+      "letter": "a",
+      "group": "vowel",
+      "like": "bat"
+    },
+    {
+      "letter": "o",
+      "group": "vowel",
+      "like": "dot"
+    },
+    {
+      "letter": "u",
+      "group": "vowel",
+      "like": "book"
+    },
+    {
+      "letter": "ii",
+      "group": "long-vowel",
+      "like": "meat"
+    },
+    {
+      "letter": "ee",
+      "group": "long-vowel",
+      "like": "fair"
+    },
+    {
+      "letter": "aa",
+      "group": "long-vowel",
+      "like": "far"
+    },
+    {
+      "letter": "oo",
+      "group": "long-vowel",
+      "like": "boy"
+    },
+    {
+      "letter": "uu",
+      "group": "long-vowel",
+      "like": "food"
+    },
+    {
+      "letter": "b",
+      "group": "consonant",
+      "like": "bad"
+    },
+    {
+      "letter": "ɓ",
+      "group": "implosive",
+      "noEquivalent": true
+    },
+    {
+      "letter": "c",
+      "group": "consonant",
+      "like": "chair"
+    },
+    {
+      "letter": "d",
+      "group": "consonant",
+      "like": "door"
+    },
+    {
+      "letter": "ɗ",
+      "group": "implosive",
+      "noEquivalent": true
+    },
+    {
+      "letter": "f",
+      "group": "consonant",
+      "like": "father"
+    },
+    {
+      "letter": "g",
+      "group": "consonant",
+      "like": "good"
+    },
+    {
+      "letter": "h",
+      "group": "consonant",
+      "like": "hard"
+    },
+    {
+      "letter": "j",
+      "group": "consonant",
+      "like": "job"
+    },
+    {
+      "letter": "k",
+      "group": "consonant",
+      "like": "kit"
+    },
+    {
+      "letter": "l",
+      "group": "consonant",
+      "like": "like"
+    },
+    {
+      "letter": "m",
+      "group": "consonant",
+      "like": "mother"
+    },
+    {
+      "letter": "n",
+      "group": "consonant",
+      "like": "noon"
+    },
+    {
+      "letter": "ñ",
+      "group": "consonant",
+      "noEquivalent": true
+    },
+    {
+      "letter": "ŋ",
+      "group": "consonant",
+      "like": "sing"
+    },
+    {
+      "letter": "p",
+      "group": "consonant",
+      "like": "part"
+    },
+    {
+      "letter": "r",
+      "group": "consonant",
+      "like": "rice"
+    },
+    {
+      "letter": "s",
+      "group": "consonant",
+      "like": "sit"
+    },
+    {
+      "letter": "t",
+      "group": "consonant",
+      "like": "talk"
+    },
+    {
+      "letter": "w",
+      "group": "consonant",
+      "like": "word"
+    },
+    {
+      "letter": "y",
+      "group": "consonant",
+      "like": "you"
+    },
+    {
+      "letter": "ƴ",
+      "group": "implosive",
+      "noEquivalent": true
+    },
+    {
+      "letter": "mb",
+      "group": "prenasalized",
+      "noEquivalent": true
+    },
+    {
+      "letter": "nd",
+      "group": "prenasalized",
+      "noEquivalent": true
+    },
+    {
+      "letter": "ng",
+      "group": "prenasalized",
+      "noEquivalent": true
+    },
+    {
+      "letter": "nj",
+      "group": "prenasalized",
+      "noEquivalent": true
+    }
+  ]
+}

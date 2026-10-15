@@ -12,6 +12,9 @@
       "status": "verified",
       "sources": [
         "mr-pc-intro"
+      ],
+      "tags": [
+        "essential"
       ]
     },
     {
@@ -123,6 +126,9 @@
       "status": "verified",
       "sources": [
         "mr-pc-intro"
+      ],
+      "tags": [
+        "essential"
       ]
     },
     {

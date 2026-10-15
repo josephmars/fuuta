@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Alphabet",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "title", "sources", "letters"],
+  "properties": {
+    "id": {"type": "string"},
+    "title": {"type": "string"},
+    "description": {"type": "string"},
+    "sources": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "letters": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["letter", "group"],
+        "properties": {
+          "letter": {"type": "string", "minLength": 1},
+          "group": {"enum": ["vowel", "long-vowel", "consonant", "implosive", "prenasalized"]},
+          "like": {"type": "string", "description": "English word with a similar sound"},
+          "noEquivalent": {"type": "boolean"},
+          "note": {"type": "string"}
+        }
+      }
+    }
+  }
+}

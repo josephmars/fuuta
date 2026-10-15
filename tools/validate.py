@@ -36,7 +36,22 @@ def main() -> int:
     if len(region) != len(sources):
         errors.append("sources.json: duplicate or missing source ids")
 
+    alphabet_path = ROOT / "content" / "alphabet.json"
+    if alphabet_path.exists():
+        alphabet = load(alphabet_path)
+        if alphabet is not None:
+            check_schema(alphabet, ROOT / "schema" / "alphabet.schema.json", "alphabet.json")
+            for ref in alphabet.get("sources", []) if isinstance(alphabet, dict) else []:
+                if ref not in region:
+                    errors.append(f"alphabet.json: unknown source '{ref}'")
+            if isinstance(alphabet, dict) and not any(region.get(r) == "mauritania" for r in alphabet.get("sources", [])):
+                errors.append("alphabet.json: needs a Mauritanian source")
+            for l in alphabet.get("letters", []) if isinstance(alphabet, dict) else []:
+                if bool(l.get("like")) == bool(l.get("noEquivalent")):
+                    errors.append(f"alphabet.json: letter '{l.get('letter')}' needs exactly one of 'like' or 'noEquivalent'")
+
     seen_ids: dict[str, str] = {}
+    status_of: dict[str, str] = {}
     counts = {"verified": 0, "needs-review": 0, "unverified": 0}
     for path in sorted((ROOT / "content" / "units").glob("*.json")):
         label = path.name
@@ -49,6 +64,7 @@ def main() -> int:
             if iid in seen_ids:
                 errors.append(f"{label}: duplicate id '{iid}' (also in {seen_ids[iid]})")
             seen_ids[iid] = label
+            status_of[iid] = item.get("status", "")
             for field in ("pulaar", "english"):
                 v = item.get(field, "")
                 if v != unicodedata.normalize("NFC", v):
@@ -64,6 +80,25 @@ def main() -> int:
                 errors.append(f"{label}: {iid}: 'verified' requires a Mauritanian source")
             if status == "needs-review" and not item.get("notes"):
                 warnings.append(f"{label}: {iid}: needs-review without a note explaining why")
+
+    for path in sorted((ROOT / "content" / "dialogues").glob("*.json")):
+        label = f"dialogues/{path.name}"
+        dlg = load(path)
+        if dlg is None:
+            continue
+        check_schema(dlg, ROOT / "schema" / "dialogue.schema.json", label)
+        for n, turn in enumerate(dlg.get("turns", []) if isinstance(dlg, dict) else []):
+            for ref in [turn.get("item")] + turn.get("distractors", []):
+                if ref not in status_of:
+                    errors.append(f"{label}: turn {n + 1}: unknown item '{ref}'")
+                elif ref == turn.get("item") and status_of[ref] != "verified":
+                    errors.append(f"{label}: turn {n + 1}: '{ref}' is not verified; dialogues use verified lines only")
+            if turn.get("speaker") == "you" and len(turn.get("distractors", [])) < 2:
+                errors.append(f"{label}: turn {n + 1}: 'you' turns need at least 2 distractors")
+            if turn.get("speaker") == "them" and turn.get("distractors"):
+                errors.append(f"{label}: turn {n + 1}: 'them' turns must not have distractors")
+            if turn.get("item") in turn.get("distractors", []):
+                errors.append(f"{label}: turn {n + 1}: the answer is also listed as a distractor")
 
     for w in warnings:
         print("warning:", w)
