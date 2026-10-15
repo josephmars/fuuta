@@ -1,5 +1,5 @@
 // Offline-first: serve from cache, refresh in the background.
-const CACHE = "fuuta-v1";
+const CACHE = "fuuta-v2";
 const SHELL = ["./", "index.html", "styles.css", "app.js", "data.json", "manifest.webmanifest",
   "icons/icon-192.png", "icons/icon-512.png", "icons/apple-touch-icon.png"];
 

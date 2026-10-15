@@ -13,7 +13,7 @@
       "sources": [
         "mr-pc-intro"
       ],
-      "notes": "Swap in your own name"
+      "usage": "Introducing yourself. Replace Kalidou with your own name."
     },
     {
       "id": "everyday-hol-no-mbiyete-aa",
@@ -23,7 +23,8 @@
       "status": "verified",
       "sources": [
         "mr-pc-intro"
-      ]
+      ],
+      "usage": "Asking someone's name. Reply: Mbiyetee-mi ko ..."
     },
     {
       "id": "everyday-njeyaa-mi-ko-moritani",
@@ -43,7 +44,8 @@
       "status": "verified",
       "sources": [
         "mr-pc-intro"
-      ]
+      ],
+      "usage": "Asking where someone is from. Reply: Njeyaa-mi ko ..."
     },
     {
       "id": "everyday-yaafo-mi",
@@ -53,7 +55,8 @@
       "status": "verified",
       "sources": [
         "mr-pc-intro"
-      ]
+      ],
+      "usage": "Said to excuse yourself. The reply is A yaafaama."
     },
     {
       "id": "everyday-a-yaafaama",
@@ -63,7 +66,8 @@
       "status": "verified",
       "sources": [
         "mr-pc-intro"
-      ]
+      ],
+      "usage": "The reply to Yaafo-mi."
     },
     {
       "id": "everyday-holto-paaa",
@@ -93,7 +97,8 @@
       "status": "verified",
       "sources": [
         "mr-pc-intro"
-      ]
+      ],
+      "usage": "Asking if someone speaks Pulaar. Reply: Eey mbeɗe nana Pulaar seeɗa."
     },
     {
       "id": "everyday-eey-mbee-nana-pulaar-seea",

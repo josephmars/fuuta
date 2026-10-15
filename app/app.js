@@ -10,8 +10,11 @@ const GAPS = [0, 1, 2, 4, 7, 14]; // days until next review per Leitner box
 const NEW_PER_SESSION = 10, QUIZ_LEN = 8;
 const dayNum = () => Math.floor((Date.now() - new Date().getTimezoneOffset() * 6e4) / 864e5);
 
-const fresh = () => ({ xp: 0, streak: 0, lastDay: null, cards: {}, mode: "p2e" });
+const fresh = () => ({ xp: 0, streak: 0, lastDay: null, cards: {}, notes: {}, mode: "p2e" });
 let S = (() => { try { return { ...fresh(), ...JSON.parse(localStorage.getItem(KEY) || "{}") }; } catch { return fresh(); } })();
+// Fold accented/special letters so travelers can search without typing ɓ ɗ ŋ ƴ ñ.
+const fold = s => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "")
+  .replace(/ɓ/g, "b").replace(/ɗ/g, "d").replace(/ŋ/g, "n").replace(/ƴ/g, "y");
 const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch { /* private mode: progress just won't persist */ } };
 
 function touch() {
@@ -37,10 +40,12 @@ let session = null; // active study/quiz session, or null
 const ICONS = {
   learn: '<rect x="4" y="6" width="13" height="14" rx="3"/><path d="M8 3h9a3 3 0 0 1 3 3v10"/>',
   path: '<path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/>',
+  dictionary: '<path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h11M9 8h6"/>',
   quiz: '<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .9-1 1.7M12 17h.01"/>',
   progress: '<path d="M5 20V11M12 20V5M19 20v-6"/>',
 };
-const TABS = [["learn", "Learn"], ["path", "Path"], ["quiz", "Quiz"], ["progress", "Progress"]];
+const TABS = [["learn", "Learn"], ["path", "Path"], ["dictionary", "Words"], ["quiz", "Quiz"], ["progress", "Progress"]];
+const TAB_OF = { unit: "path", word: "dictionary" }; // detail pages keep their parent tab lit
 
 function route() { return (location.hash.replace(/^#\/?/, "") || "learn").split("/"); }
 const go = h => { location.hash = h; };
@@ -50,10 +55,11 @@ function render() {
   const tabs = $("#tabs");
   tabs.hidden = !!session;
   tabs.innerHTML = TABS.map(([k, l]) =>
-    `<a href="#/${k}" class="${page === k || (k === "path" && page === "unit") ? "on" : ""}"><svg viewBox="0 0 24 24">${ICONS[k]}</svg>${l}</a>`).join("");
+    `<a href="#/${k}" class="${(TAB_OF[page] || page) === k ? "on" : ""}"><svg viewBox="0 0 24 24">${ICONS[k]}</svg>${l}</a>`).join("");
   const view = $("#view");
   if (session) view.innerHTML = session.kind === "quiz" ? quizView() : studyView();
-  else view.innerHTML = ({ learn: learnView, path: pathView, quiz: quizSetup, progress: progressView, unit: () => unitView(arg) }[page] || learnView)();
+  else view.innerHTML = ({ learn: learnView, path: pathView, dictionary: dictView, quiz: quizSetup, progress: progressView,
+    unit: () => unitView(arg), word: () => wordView(arg) }[page] || learnView)();
   window.scrollTo(0, 0);
 }
 
@@ -98,10 +104,11 @@ function studyView() {
   }
   const it = byId(s.queue[s.i]);
   const front = `<div class="big">${esc(it.pulaar)}</div>${badge(it)}<div class="hint">Tap to flip</div>`;
-  const back = `<div class="lab">${esc(it.english)}</div>${it.french ? `<div class="hint">FR: ${esc(it.french)}</div>` : ""}`;
+  const back = `<div class="lab">${esc(it.english)}</div>${it.french ? `<div class="hint">FR: ${esc(it.french)}</div>` : ""}
+    ${usageBlock(it)}${noteBox(it.id)}<div class="hint">Tap the card to flip back</div>`;
   return `<div class="sess-top"><button class="x" data-act="end" aria-label="Close">×</button>
       <div class="sub">${s.i + 1} / ${s.queue.length}</div></div>
-    <div class="deck"><button class="card" data-act="flip">${s.flipped ? back : front}</button></div>
+    <div class="deck"><div class="card" role="button" tabindex="0" data-act="flip">${s.flipped ? back : front}</div></div>
     <div class="acts">
       <button class="round no" data-act="again"><i>✕</i>To review</button>
       <button class="round yes" data-act="known"><i>✓</i>I know it</button></div>`;
@@ -121,14 +128,55 @@ function pathView() {
       <div style="flex:1"><b>${esc(u.title)}</b><span class="sub">${st.n} phrases · ${st.k} learned</span>
       <div class="bar"><i style="width:${st.pct}%"></i></div></div></button>`;
   }).join("");
-  return `${header("Path", "Mauritanian Pulaar")}
-    <input class="search" id="q" type="search" placeholder="Search phrasebook (Pulaar or English)" autocomplete="off">
-    <div id="path-body">${units}</div>`;
+  return `${header("Path", "Mauritanian Pulaar")}${units}`;
 }
 
+const usageBlock = it => it.usage ? `<div class="usage"><small>When to use</small>${esc(it.usage)}</div>` : "";
+const noteBox = id => `<textarea class="note" data-note="${esc(id)}" rows="2" maxlength="2000"
+  placeholder="Your notes (only on this device)">${esc(S.notes[id] || "")}</textarea>`;
+
 function listItems(items) {
-  return items.map(i => `<div class="item"><div class="l"><b>${esc(i.pulaar)}</b>${badge(i)}</div><span>${esc(i.english)}</span></div>`).join("")
+  return items.map(i => `<button class="item" data-go="word/${esc(i.id)}"><div class="l"><b>${esc(i.pulaar)}</b>${badge(i)}
+    ${S.notes[i.id] ? `<span class="dot" title="Has your note">✎</span>` : ""}</div>
+    <span>${esc(i.english)}</span><em class="${learned(i.id) ? "got" : ""}">${learned(i.id) ? "✓" : ""}</em></button>`).join("")
     || `<p class="sub">Nothing found.</p>`;
+}
+
+// ---------- Dictionary ----------
+const DICT = { q: "", f: "all", topic: "" };
+function dictItems() {
+  const q = fold(DICT.q.trim());
+  return ITEMS.filter(i => (!DICT.topic || UNIT_OF[i.id].id === DICT.topic)
+    && (DICT.f === "all" || (DICT.f === "learned") === learned(i.id))
+    && (!q || fold(i.pulaar).includes(q) || fold(i.english).includes(q)));
+}
+function dictBody() {
+  const rows = dictItems();
+  return `<p class="sub" style="margin:0 0 6px">${rows.length} of ${ITEMS.length} entries</p>${listItems(rows)}`;
+}
+function dictView() {
+  const topics = DATA.units.map(u => `<option value="${u.id}" ${DICT.topic === u.id ? "selected" : ""}>${esc(u.title)}</option>`).join("");
+  const seg = (f, l) => `<button data-dict-f="${f}" class="${DICT.f === f ? "on" : ""}">${l}</button>`;
+  return `${header("Words", "Every word and phrase")}
+    <input class="search" id="dq" type="search" value="${esc(DICT.q)}" placeholder="Search Pulaar or English" autocomplete="off" autocapitalize="off">
+    <div class="seg">${seg("all", "All")}${seg("learned", "Learned")}${seg("new", "Not learned")}</div>
+    <select class="search" id="dtopic"><option value="">All topics</option>${topics}</select>
+    <div id="dict-body">${dictBody()}</div>`;
+}
+
+function wordView(id) {
+  const it = byId(id);
+  if (!it) return dictView();
+  const u = UNIT_OF[id], c = S.cards[id];
+  return `<a class="back" href="#/dictionary">‹ Words</a>
+    <div class="card" style="min-height:0;margin-top:6px"><div class="big">${esc(it.pulaar)}</div>${badge(it)}
+      <div class="lab">${esc(it.english)}</div>${it.french ? `<div class="hint">FR: ${esc(it.french)}</div>` : ""}
+      ${it.hassaniya ? `<div class="hint">Hassaniya: ${esc(it.hassaniya)}</div>` : ""}</div>
+    ${usageBlock(it)}
+    <h2>Your notes</h2>${noteBox(id)}
+    <h2>Details</h2>
+    <p class="sub">Topic: <a href="#/unit/${u.id}">${esc(u.title)}</a><br>
+      Status: ${learned(id) ? "learned" : c ? "in progress" : "not studied yet"}${c ? ` (box ${c.box} of 5)` : ""}</p>`;
 }
 
 function unitView(id) {
@@ -213,18 +261,68 @@ function progressView() {
   return `${header("Progress")}
     <div class="stat"><div><b>${S.xp}</b><small>XP</small></div><div><b>${k}</b><small>learned</small></div><div><b>${streak()}</b><small>day streak</small></div></div>
     <h2>By unit</h2>${rows}
+    <h2>Backup</h2>
+    <p class="sub">Save your progress and notes, or restore them on another device. Clearing Safari's website data erases progress, so back up before you travel.</p>
+    <div class="row" style="margin-top:10px"><button class="btn alt" data-act="export-file" style="margin:0">Save file</button>
+      <button class="btn alt" data-act="export-copy" style="margin:0">Copy code</button></div>
+    <textarea class="note" id="imp" rows="3" placeholder="Paste a backup code here to restore" style="margin-top:12px"></textarea>
+    <div class="row"><button class="btn" data-act="import-text" style="margin:0">Restore from code</button>
+      <label class="btn alt" style="margin:0">From file<input type="file" id="impfile" accept=".json,application/json" hidden></label></div>
+    <p id="bk-msg" class="sub" role="status"></p>
     <h2>About this content</h2>
     <p class="sub">${total} phrases from a Mauritania-specific Pulaar course. ${review} are marked “check spelling” until a native speaker confirms them.</p>
     <button class="link" data-act="reset">Reset progress</button>`;
+}
+
+// ---------- Backup ----------
+const backupText = () => JSON.stringify({ app: "fuuta", version: 1, exportedAt: new Date().toISOString(),
+  data: { xp: S.xp, streak: S.streak, lastDay: S.lastDay, cards: S.cards, notes: S.notes, mode: S.mode } });
+
+function parseBackup(txt) {
+  let o;
+  try { o = JSON.parse(txt.trim()); } catch { return { error: "That isn't a valid backup." }; }
+  if (!o || o.app !== "fuuta" || o.version !== 1 || typeof o.data !== "object" || !o.data) return { error: "That isn't a Fuuta backup." };
+  const d = o.data, num = n => typeof n === "number" && Number.isFinite(n);
+  if (!num(d.xp) || !d.cards || typeof d.cards !== "object") return { error: "The backup is incomplete." };
+  const cards = {}, notes = {};
+  for (const [id, c] of Object.entries(d.cards)) if (c && num(c.box) && c.box >= 0 && c.box <= 5 && num(c.due)) cards[id] = { box: Math.floor(c.box), due: c.due };
+  for (const [id, t] of Object.entries(d.notes || {})) if (typeof t === "string" && t) notes[id] = t.slice(0, 2000);
+  return { data: { xp: d.xp, streak: num(d.streak) ? d.streak : 0, lastDay: num(d.lastDay) ? d.lastDay : null, cards, notes, mode: d.mode === "e2p" ? "e2p" : "p2e" } };
+}
+
+let pendingImport = null;
+const bkMsg = t => { const m = $("#bk-msg"); if (m) m.textContent = t; };
+function stageImport(txt) {
+  const r = parseBackup(txt);
+  if (r.error) { pendingImport = null; return bkMsg(r.error); }
+  pendingImport = r.data;
+  bkMsg(`Found ${Object.keys(r.data.cards).length} cards and ${Object.keys(r.data.notes).length} notes. This replaces your current progress. Tap Restore again to confirm.`);
+}
+function applyImport() { S = { ...fresh(), ...pendingImport }; pendingImport = null; save(); render(); bkMsg("Restored."); }
+
+async function exportCopy() {
+  const txt = backupText();
+  try { await navigator.clipboard.writeText(txt); bkMsg("Backup code copied. Paste it somewhere safe."); }
+  catch { const t = $("#imp"); t.value = txt; t.select(); bkMsg("Couldn't copy automatically. Select all and copy the code above."); }
+}
+function exportFile() {
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([backupText()], { type: "application/json" }));
+  a.download = `fuuta-progress-${new Date().toISOString().slice(0, 10)}.json`;
+  document.body.append(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+  bkMsg("Backup file saved.");
 }
 
 // ---------- events ----------
 const byId = id => ITEMS.find(i => i.id === id);
 
 document.addEventListener("click", e => {
-  const t = e.target.closest("[data-act],[data-go],[data-mode],[data-opt]");
+  if (e.target.closest("textarea, input, label")) return; // typing/choosing a file must not flip cards
+  const t = e.target.closest("[data-act],[data-go],[data-mode],[data-opt],[data-dict-f]");
   if (!t) return;
   if (t.dataset.go) return go(t.dataset.go);
+  if (t.dataset.dictF) { DICT.f = t.dataset.dictF; return render(); }
   if (t.dataset.mode) { S.mode = t.dataset.mode; save(); return render(); }
   if (t.dataset.opt != null) return answer(+t.dataset.opt);
   const s = session;
@@ -241,20 +339,35 @@ document.addEventListener("click", e => {
     case "quiz-unit": return startQuiz(t.dataset.unit);
     case "next": s.i++; return render();
     case "end": session = null; return render();
+    case "export-file": return exportFile();
+    case "export-copy": return exportCopy();
+    case "import-text": {
+      const txt = $("#imp").value;
+      if (pendingImport && txt === stagedText) return applyImport();
+      stagedText = txt; return stageImport(txt);
+    }
     case "reset":
       if (t.dataset.sure) { S = fresh(); save(); return render(); }
       t.dataset.sure = "1"; t.textContent = "Tap again to erase all progress"; return;
   }
 });
 
+let stagedText = "";
 document.addEventListener("input", e => {
-  if (e.target.id !== "q") return;
-  const q = e.target.value.trim().toLowerCase();
-  $("#path-body").innerHTML = q
-    ? listItems(ITEMS.filter(i => i.pulaar.toLowerCase().includes(q) || i.english.toLowerCase().includes(q)).slice(0, 60))
-    : pathBodyUnits();
+  const el = e.target;
+  if (el.dataset.note) { // personal note, saved as you type
+    const t = el.value.slice(0, 2000);
+    if (t.trim()) S.notes[el.dataset.note] = t; else delete S.notes[el.dataset.note];
+    return save();
+  }
+  if (el.id === "dq") { DICT.q = el.value; $("#dict-body").innerHTML = dictBody(); }
 });
-function pathBodyUnits() { const d = document.createElement("div"); d.innerHTML = pathView(); return $("#path-body", d).innerHTML; }
+document.addEventListener("change", e => {
+  if (e.target.id === "dtopic") { DICT.topic = e.target.value; $("#dict-body").innerHTML = dictBody(); }
+  if (e.target.id === "impfile" && e.target.files[0]) {
+    e.target.files[0].text().then(txt => { $("#imp").value = txt; stagedText = txt; stageImport(txt); e.target.value = ""; });
+  }
+});
 
 window.addEventListener("hashchange", () => { session = null; render(); });
 

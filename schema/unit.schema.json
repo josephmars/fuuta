@@ -26,7 +26,8 @@
         "tags": {"type": "array", "items": {"type": "string"}},
         "status": {"enum": ["verified", "needs-review", "unverified"]},
         "sources": {"type": "array", "minItems": 1, "items": {"type": "string"}},
-        "notes": {"type": "string"},
+        "usage": {"type": "string", "description": "When/with whom the item is used, shown to learners. Must be grounded in a source."},
+        "notes": {"type": "string", "description": "Internal remarks (e.g. why needs-review); not shown as usage"},
         "variants": {
           "type": "array",
           "description": "Forms from other sources (e.g. other countries) kept for comparison, never shown as Mauritanian",

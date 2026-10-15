@@ -10,7 +10,7 @@ from pathlib import Path
 from validate import main as validate
 
 ROOT = Path(__file__).resolve().parent.parent
-KEEP = ("id", "pulaar", "english", "french", "hassaniya", "kind", "tags", "status", "notes")
+KEEP = ("id", "pulaar", "english", "french", "hassaniya", "kind", "tags", "status", "usage", "notes")
 
 
 def main() -> int:

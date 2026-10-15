@@ -12,7 +12,8 @@
       "status": "verified",
       "sources": [
         "mr-pc-intro"
-      ]
+      ],
+      "usage": "Use at any time of the day."
     },
     {
       "id": "greetings-maaleykum-salaam",
@@ -22,7 +23,8 @@
       "status": "verified",
       "sources": [
         "mr-pc-intro"
-      ]
+      ],
+      "usage": "The reply to Assalaa Maaleykum."
     },
     {
       "id": "greetings-jam-waali",
@@ -75,7 +77,8 @@
       "status": "verified",
       "sources": [
         "mr-pc-intro"
-      ]
+      ],
+      "usage": "A greeting question. Reply: Jam tan."
     },
     {
       "id": "greetings-jam-tan",
@@ -85,7 +88,8 @@
       "status": "verified",
       "sources": [
         "mr-pc-intro"
-      ]
+      ],
+      "usage": "The reply to On ngoni e jam?, and to how the work is going."
     },
     {
       "id": "greetings-no-mba-aa",
@@ -112,7 +116,8 @@
       "status": "verified",
       "sources": [
         "mr-pc-intro"
-      ]
+      ],
+      "usage": "The reply to No mbaɗ-ɗaa? and No mbaɗ-ɗaa e tampere?"
     },
     {
       "id": "greetings-no-esngu-maa-wai",
@@ -134,7 +139,8 @@
       "sources": [
         "mr-pc-intro"
       ],
-      "notes": "Initial letters hard to read at low resolution; recheck"
+      "notes": "Initial letters hard to read at low resolution; recheck",
+      "usage": "The reply when asked about the family or children."
     },
     {
       "id": "greetings-no-mba-aa-e-liggeey",
@@ -175,7 +181,8 @@
       "status": "verified",
       "sources": [
         "mr-pc-intro"
-      ]
+      ],
+      "usage": "Said to welcome someone."
     },
     {
       "id": "greetings-mba",

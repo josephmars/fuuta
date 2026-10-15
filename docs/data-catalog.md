@@ -31,11 +31,12 @@ One lesson unit. Schema: [`schema/unit.schema.json`](../schema/unit.schema.json)
 | `kind` | `word` \| `phrase` \| `greeting` \| `response` | |
 | `status` | `verified` \| `needs-review` \| `unverified` | `verified` requires a source with region `mauritania` |
 | `sources` | string[] | Source ids, at least one |
-| `french`, `hassaniya`, `tags`, `notes` | optional | `needs-review` should explain why in `notes` |
+| `usage` | optional string | When/with whom it is used; shown to learners as "When to use". Must be grounded in a source |
+| `french`, `hassaniya`, `tags`, `notes` | optional | `notes` is internal (e.g. why `needs-review`); `usage` is the learner-facing one |
 | `variants` | array of `{source, pulaar, note?}` | Forms from other sources, comparison only |
 
 ## 3. `app/data.json` (generated)
-Built by `tools/build.py`. `{ "units": [ {id, title, order, description, items: [...]} ] }`. Items keep `id, pulaar, english, french, hassaniya, kind, tags, status, notes`. `unverified` items and `variants` are removed. Gitignored.
+Built by `tools/build.py`. `{ "units": [ {id, title, order, description, items: [...]} ] }`. Items keep `id, pulaar, english, french, hassaniya, kind, tags, status, usage, notes`. `unverified` items and `variants` are removed. Gitignored.
 
 ## 4. Browser storage (`localStorage["fuuta:v1"]`)
 | Key | Type | Notes |
@@ -43,9 +44,19 @@ Built by `tools/build.py`. `{ "units": [ {id, title, order, description, items: 
 | `xp` | number | +2 per flashcard known, 10-20 per correct quiz answer |
 | `streak`, `lastDay` | number | `lastDay` is days since epoch, local time |
 | `cards` | `{ [itemId]: {box, due} }` | Leitner box 0-5; `due` is a day number. Review gaps (days): 0, 1, 2, 4, 7, 14 |
+| `notes` | `{ [itemId]: string }` | Personal notes, max 2000 chars each, only on this device |
 | `mode` | `p2e` \| `e2p` | Last quiz direction |
 
 A card counts as learned at box 2 or higher. Item ids are the join key, so renaming an id resets that card's progress.
 
 ## 5. Service worker cache
-Cache name `fuuta-v1` in `app/sw.js`, holding the app shell and `data.json`. Bump the name when shipping breaking changes.
+Cache name `fuuta-v2` in `app/sw.js`, holding the app shell and `data.json`. Bump the name when shipping breaking changes.
+
+## 6. Backup file / code
+Produced by Progress > Backup (Save file or Copy code), accepted by Restore.
+
+```json
+{ "app": "fuuta", "version": 1, "exportedAt": "ISO-8601",
+  "data": { "xp": 0, "streak": 0, "lastDay": null, "cards": {}, "notes": {}, "mode": "p2e" } }
+```
+On restore the file is validated (app/version, numeric fields, box 0-5; invalid cards are dropped, notes are truncated), then replaces current progress after a second tap to confirm. Bump `version` and add a migration if the stored shape changes.

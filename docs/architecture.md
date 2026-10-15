@@ -31,7 +31,7 @@ flowchart LR
 | App | `app/` | `index.html`, `styles.css`, `app.js`, `sw.js`, manifest |
 
 ## App views
-Learn (flashcards, spaced review), Path (units, phrasebook, search), Quiz (multiple choice both directions), Progress. Routing is hash-based (`#/learn`, `#/path`, `#/unit/<id>`, `#/quiz`, `#/progress`). Study and quiz sessions are in-memory overlays.
+Learn (flashcards with usage and personal notes, spaced review), Path (units and per-unit phrasebook), Words (dictionary of every item with search and learned/topic filters, plus word detail), Quiz (multiple choice both directions), Progress (stats and backup/restore). Routing is hash-based (`#/learn`, `#/path`, `#/unit/<id>`, `#/dictionary`, `#/word/<id>`, `#/quiz`, `#/progress`). Search ignores ɓ ɗ ŋ ƴ and accents so it works on a normal keyboard. Study and quiz sessions are in-memory overlays.
 
 ## Constraints
 - Only Mauritanian Pulaar is shown. Other regions are comparison data in `variants` and never ship (see [ADR 0003](adr/0003-mauritanian-only-verification.md)).
