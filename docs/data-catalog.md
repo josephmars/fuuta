@@ -35,8 +35,17 @@ One lesson unit. Schema: [`schema/unit.schema.json`](../schema/unit.schema.json)
 | `french`, `hassaniya`, `tags`, `notes` | optional | `notes` is internal (e.g. why `needs-review`); `usage` is the learner-facing one |
 | `variants` | array of `{source, pulaar, note?}` | Forms from other sources, comparison only |
 
+## 2b. `content/alphabet.json` (authored)
+Schema: [`schema/alphabet.schema.json`](../schema/alphabet.schema.json). `letters[]` each have `letter`, `group` (`vowel`, `long-vowel`, `consonant`, `implosive`, `prenasalized`) and exactly one of `like` (an English word with a similar sound) or `noEquivalent: true`. Needs a Mauritanian source.
+
+## 2c. `content/dialogues/NN-name.json` (authored)
+Schema: [`schema/dialogue.schema.json`](../schema/dialogue.schema.json). A dialogue has `turns[]` of `{speaker: "them"|"you", item, distractors?}`. `item` is an item id; the validator requires it to exist and be `verified`. `you` turns need 2-3 `distractors` (ids of clearly wrong replies); `them` turns have none.
+
+## 2d. Tags
+`tags: ["essential"]` puts an item on the Trip phrases screen. Only verified items should be tagged.
+
 ## 3. `app/data.json` (generated)
-Built by `tools/build.py`. `{ "units": [ {id, title, order, description, items: [...]} ] }`. Items keep `id, pulaar, english, french, hassaniya, kind, tags, status, usage, notes`. `unverified` items and `variants` are removed. Gitignored.
+Built by `tools/build.py`. `{ "units": [ {id, title, order, description, items: [...]} ] }`. Items keep `id, pulaar, english, french, hassaniya, kind, tags, status, usage, notes`. `unverified` items and `variants` are removed; `confirmed: true` is added when an item has a native-speaker Mauritanian source. Also contains `alphabet` and `dialogues` (lines resolved to text). Gitignored.
 
 ## 4. Browser storage (`localStorage["fuuta:v1"]`)
 | Key | Type | Notes |
