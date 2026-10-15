@@ -10,3 +10,4 @@ Mauritanian Pulaar phrase/lesson PWA for a trip. Content lives in `content/`, no
 - Commits follow Conventional Commits (`feat:`, `fix:`, `content:`, `docs:`, `chore:`, `refactor:`); use `content:` for lesson data changes.
 - `app/` is a no-build static PWA (vanilla JS). `app/data.json` is generated: run `uv run tools/build.py` after any content change. Preview with `uv run python -m http.server -d app 8000`.
 - UI style follows the Dialect app: olive green, warm cream, gold accent, big bold card text, bottom tab bar.
+- Docs as code: keep `docs/` (architecture, data-catalog, adr/, guides/) updated in the same commit as the change. Schema or storage change: update `docs/data-catalog.md`. Hard-to-reverse decision: add a numbered ADR in `docs/adr/`.

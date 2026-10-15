@@ -29,3 +29,14 @@ uv run tools/validate.py
 1. Add the source to `content/sources.json` with its region.
 2. Compare each new item with existing Mauritanian entries. If it differs, keep the Mauritanian form as the main entry and put the other in `variants`.
 3. Items from non-Mauritanian sources start as `unverified`.
+
+## Run
+
+```
+uv run tools/build.py
+uv run python -m http.server -d app 8000
+```
+
+## Docs
+
+See [docs/](docs/README.md): architecture, data catalog, ADRs and guides.
