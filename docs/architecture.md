@@ -16,6 +16,7 @@ flowchart LR
   D --> A[app/ PWA<br/>vanilla JS]
   A <--> L[(localStorage<br/>fuuta:v1)]
   A --> SW[Service worker<br/>offline cache]
+  GH[GitHub Actions<br/>build + deploy] -. publishes app/ .-> Pages[GitHub Pages<br/>HTTPS]
 ```
 
 ## Components
@@ -25,6 +26,7 @@ flowchart LR
 | Schemas | `schema/` | JSON Schema for sources and units |
 | Validator | `tools/validate.py` | Schema, unique ids, known sources, "verified needs a Mauritanian source" |
 | Builder | `tools/build.py` | Runs the validator, drops `unverified` items and `variants`, writes `app/data.json` |
+| Deploy | `.github/workflows/pages.yml` | Builds and publishes `app/` to GitHub Pages on push to `main` ([ADR 0005](adr/0005-github-pages-hosting.md)) |
 | Icons | `tools/make_icons.py` | Dependency-free PNG icon generation |
 | App | `app/` | `index.html`, `styles.css`, `app.js`, `sw.js`, manifest |
 
