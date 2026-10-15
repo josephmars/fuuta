@@ -1,0 +1,199 @@
+{
+  "id": "greetings",
+  "title": "Greetings",
+  "order": 1,
+  "description": "The long greeting exchange is central to Fulani etiquette.",
+  "items": [
+    {
+      "id": "greetings-assalaa-maaleykum",
+      "pulaar": "Assalaa Maaleykum",
+      "english": "Peace be upon you (any time of day)",
+      "kind": "greeting",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "greetings-maaleykum-salaam",
+      "pulaar": "Maaleykum Salaam",
+      "english": "And on you, too (reply)",
+      "kind": "response",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "greetings-jam-waali",
+      "pulaar": "Jam waali",
+      "english": "Good morning",
+      "kind": "greeting",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ],
+      "variants": [
+        {
+          "source": "gm-pc-tape-2013",
+          "pulaar": "Jam wali"
+        }
+      ]
+    },
+    {
+      "id": "greetings-jam-nalli",
+      "pulaar": "Jam ñalli",
+      "english": "Good afternoon",
+      "kind": "greeting",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "greetings-jam-hiiri",
+      "pulaar": "Jam hiiri",
+      "english": "Good evening",
+      "kind": "greeting",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ],
+      "variants": [
+        {
+          "source": "gm-pc-tape-2013",
+          "pulaar": "Jam hiiri",
+          "note": "Gambia course glosses this as 'good night'"
+        }
+      ]
+    },
+    {
+      "id": "greetings-on-ngoni-e-jam",
+      "pulaar": "On ngoni e jam?",
+      "english": "Are you in peace?",
+      "kind": "greeting",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "greetings-jam-tan",
+      "pulaar": "Jam tan",
+      "english": "Peace only (standard reply)",
+      "kind": "response",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "greetings-no-mba-aa",
+      "pulaar": "No mbaɗ-ɗaa?",
+      "english": "How are you?",
+      "kind": "greeting",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ],
+      "variants": [
+        {
+          "source": "gm-pc-tape-2013",
+          "pulaar": "Hono mbaɗaa?",
+          "note": "Gambian form"
+        }
+      ]
+    },
+    {
+      "id": "greetings-ko-mawum",
+      "pulaar": "Ko mawɗum",
+      "english": "I am fine",
+      "kind": "response",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "greetings-no-esngu-maa-wai",
+      "pulaar": "No ɓesngu maa waɗi?",
+      "english": "How is the family?",
+      "kind": "greeting",
+      "status": "needs-review",
+      "sources": [
+        "mr-pc-intro"
+      ],
+      "notes": "Letters hard to read at low resolution (ɓ, ɗ); recheck"
+    },
+    {
+      "id": "greetings-ee-e-jam",
+      "pulaar": "Eɓe e jam",
+      "english": "They are fine",
+      "kind": "response",
+      "status": "needs-review",
+      "sources": [
+        "mr-pc-intro"
+      ],
+      "notes": "Initial letters hard to read at low resolution; recheck"
+    },
+    {
+      "id": "greetings-no-mba-aa-e-liggeey",
+      "pulaar": "No mbaɗ-ɗaa e liggeey?",
+      "english": "How is the work?",
+      "kind": "greeting",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "greetings-no-mba-aa-e-tampere",
+      "pulaar": "No mbaɗ-ɗaa e tampere?",
+      "english": "How are you with tiredness?",
+      "kind": "greeting",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "greetings-no-sukaae-maa-mbai",
+      "pulaar": "No sukaaɓe maa mbaɗi?",
+      "english": "How are your children?",
+      "kind": "greeting",
+      "status": "needs-review",
+      "sources": [
+        "mr-pc-intro"
+      ],
+      "notes": "Final word hard to read at low resolution; recheck"
+    },
+    {
+      "id": "greetings-bismilla",
+      "pulaar": "Bismilla!",
+      "english": "Welcome!",
+      "kind": "phrase",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "greetings-mba",
+      "pulaar": "Mba!",
+      "english": "Thank you!",
+      "kind": "phrase",
+      "status": "needs-review",
+      "sources": [
+        "mr-pc-intro"
+      ],
+      "notes": "Printed as 'Mba!' in the course but this looks unusual for 'thank you'. The Gambia script uses 'A jaaraama'. Ask a Mauritanian speaker which to teach.",
+      "variants": [
+        {
+          "source": "gm-pc-tape-2013",
+          "pulaar": "A jaaraama",
+          "note": "Gambian, 'thank you'"
+        }
+      ]
+    }
+  ]
+}

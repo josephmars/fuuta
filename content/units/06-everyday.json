@@ -1,0 +1,170 @@
+{
+  "id": "everyday",
+  "title": "Introductions and everyday phrases",
+  "order": 6,
+  "description": "Names, origin, and common needs.",
+  "items": [
+    {
+      "id": "everyday-mbiyetee-mi-ko-kalidou",
+      "pulaar": "Mbiyetee-mi ko Kalidou",
+      "english": "My name is Kalidou",
+      "kind": "phrase",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ],
+      "notes": "Swap in your own name"
+    },
+    {
+      "id": "everyday-hol-no-mbiyete-aa",
+      "pulaar": "Hol no mbiyete-aa?",
+      "english": "What's your name?",
+      "kind": "phrase",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "everyday-njeyaa-mi-ko-moritani",
+      "pulaar": "Njeyaa-mi ko Moritani",
+      "english": "I am from Mauritania",
+      "kind": "phrase",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "everyday-holto-njeye-aa",
+      "pulaar": "Holto njeye-aa?",
+      "english": "Where are you from?",
+      "kind": "phrase",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "everyday-yaafo-mi",
+      "pulaar": "Yaafo-mi",
+      "english": "Excuse me",
+      "kind": "phrase",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "everyday-a-yaafaama",
+      "pulaar": "A yaafaama",
+      "english": "You are excused",
+      "kind": "response",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "everyday-holto-paaa",
+      "pulaar": "Holto paaɗa?",
+      "english": "Where are you going?",
+      "kind": "phrase",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "everyday-paa-mi-ko-galle",
+      "pulaar": "Paa-mi ko galle",
+      "english": "I am going home",
+      "kind": "phrase",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "everyday-aa-nana-pulaar",
+      "pulaar": "Aɗa nana Pulaar?",
+      "english": "Do you speak Pulaar?",
+      "kind": "phrase",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "everyday-eey-mbee-nana-pulaar-seea",
+      "pulaar": "Eey mbeɗe nana Pulaar seeɗa",
+      "english": "Yes, I speak Pulaar a little bit",
+      "kind": "phrase",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "everyday-mi-tampii",
+      "pulaar": "Mi tampii",
+      "english": "I am tired",
+      "kind": "phrase",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "everyday-mi-oii",
+      "pulaar": "Mi ŋoŋii",
+      "english": "I am sleepy",
+      "kind": "phrase",
+      "status": "needs-review",
+      "sources": [
+        "mr-pc-intro"
+      ],
+      "notes": "Letters hard to read at low resolution; recheck"
+    },
+    {
+      "id": "everyday-ina-wuli",
+      "pulaar": "Ina wuli",
+      "english": "It's hot",
+      "kind": "phrase",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "everyday-ina-jaangi",
+      "pulaar": "Ina jaangi",
+      "english": "It's cold",
+      "kind": "phrase",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "everyday-eey",
+      "pulaar": "Eey",
+      "english": "Yes",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "everyday-alaa",
+      "pulaar": "Alaa",
+      "english": "No",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    }
+  ]
+}

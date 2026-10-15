@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Unit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "title", "order", "items"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+    "title": {"type": "string", "minLength": 1},
+    "description": {"type": "string"},
+    "order": {"type": "integer", "minimum": 1},
+    "items": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/item"}}
+  },
+  "$defs": {
+    "item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "pulaar", "english", "kind", "status", "sources"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+        "pulaar": {"type": "string", "minLength": 1},
+        "english": {"type": "string", "minLength": 1},
+        "french": {"type": "string"},
+        "hassaniya": {"type": "string"},
+        "kind": {"enum": ["word", "phrase", "greeting", "response"]},
+        "tags": {"type": "array", "items": {"type": "string"}},
+        "status": {"enum": ["verified", "needs-review", "unverified"]},
+        "sources": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "notes": {"type": "string"},
+        "variants": {
+          "type": "array",
+          "description": "Forms from other sources (e.g. other countries) kept for comparison, never shown as Mauritanian",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["source", "pulaar"],
+            "properties": {
+              "source": {"type": "string"},
+              "pulaar": {"type": "string"},
+              "note": {"type": "string"}
+            }
+          }
+        }
+      }
+    }
+  }
+}

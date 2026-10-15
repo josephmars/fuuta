@@ -1,0 +1,338 @@
+{
+  "id": "host-family",
+  "title": "People and family",
+  "order": 3,
+  "description": "Who's who in a household you may stay in.",
+  "items": [
+    {
+      "id": "host-family-mi",
+      "pulaar": "Mi",
+      "english": "I",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "host-family-a",
+      "pulaar": "A",
+      "english": "You (singular)",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "host-family-o",
+      "pulaar": "O",
+      "english": "He or she",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "host-family-en",
+      "pulaar": "En",
+      "english": "We (including the person spoken to)",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "host-family-min",
+      "pulaar": "Min",
+      "english": "We (excluding the person spoken to)",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "host-family-on",
+      "pulaar": "On",
+      "english": "You (plural)",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "host-family-e",
+      "pulaar": "Ɓe",
+      "english": "They",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "host-family-debbo",
+      "pulaar": "Debbo",
+      "english": "A woman",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "host-family-rewe",
+      "pulaar": "Rewɓe",
+      "english": "Women",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "host-family-gorko",
+      "pulaar": "Gorko",
+      "english": "A man",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "host-family-wore",
+      "pulaar": "Worɓe",
+      "english": "Men",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "host-family-mboomri",
+      "pulaar": "Mboomri",
+      "english": "A girl",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "host-family-boomi",
+      "pulaar": "Boomi",
+      "english": "Girls",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "host-family-suka-gorko",
+      "pulaar": "Suka gorko",
+      "english": "A boy",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "host-family-sukaae-wore",
+      "pulaar": "Sukaaɓe worɓe",
+      "english": "Boys",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "host-family-cukalel",
+      "pulaar": "Cukalel",
+      "english": "A child",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "host-family-sukaae",
+      "pulaar": "Sukaaɓe",
+      "english": "Children",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "host-family-esngu",
+      "pulaar": "Ɓesngu",
+      "english": "A family",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "host-family-yumiraao",
+      "pulaar": "Yumiraaɗo",
+      "english": "Mother",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "host-family-baabiraao",
+      "pulaar": "Baabiraaɗo",
+      "english": "Father",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "host-family-jom-suudu",
+      "pulaar": "Jom suudu",
+      "english": "Wife",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "host-family-jom-galle",
+      "pulaar": "Jom galle",
+      "english": "Husband",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "host-family-mawniraao-debbo",
+      "pulaar": "Mawniraaɗo debbo",
+      "english": "Elder sister",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "host-family-miniraao-debbo",
+      "pulaar": "Miñiraaɗo debbo",
+      "english": "Younger sister",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "host-family-mawniraao-gorko",
+      "pulaar": "Mawniraaɗo gorko",
+      "english": "Elder brother",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "host-family-miniraao-gorko",
+      "pulaar": "Miñiraaɗo gorko",
+      "english": "Younger brother",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "host-family-galle",
+      "pulaar": "Galle",
+      "english": "House",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "host-family-suudu",
+      "pulaar": "Suudu",
+      "english": "Room",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "host-family-kacitaari",
+      "pulaar": "Kacitaari",
+      "english": "Breakfast",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "host-family-bottaari",
+      "pulaar": "Bottaari",
+      "english": "Lunch",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "host-family-hiraande",
+      "pulaar": "Hiraande",
+      "english": "Dinner",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "host-family-taarodde",
+      "pulaar": "Taarodde",
+      "english": "Toilet",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "host-family-defnirde",
+      "pulaar": "Defnirde",
+      "english": "Kitchen",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    }
+  ]
+}

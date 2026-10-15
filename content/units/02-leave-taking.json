@@ -1,0 +1,151 @@
+{
+  "id": "leave-taking",
+  "title": "Saying goodbye",
+  "order": 2,
+  "description": "Closing a conversation or visit.",
+  "items": [
+    {
+      "id": "leave-taking-ngonen-e-jam",
+      "pulaar": "Ngonen e jam!",
+      "english": "Good-bye!",
+      "kind": "phrase",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "leave-taking-njiiden-e-jam",
+      "pulaar": "Njiiden e jam!",
+      "english": "See you!",
+      "kind": "phrase",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "leave-taking-nallen-e-jam",
+      "pulaar": "Ñallen e jam",
+      "english": "Have a good day",
+      "kind": "phrase",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "leave-taking-mbaalen-e-jam",
+      "pulaar": "Mbaalen e jam",
+      "english": "Have a good night",
+      "kind": "phrase",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "leave-taking-yo-alla-rokku-en-waalde-e-jam",
+      "pulaar": "Yo Alla rokku-en waalde e jam",
+      "english": "May we have a good night",
+      "kind": "phrase",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "leave-taking-yo-jam-ooy",
+      "pulaar": "Yo jam ɓooy",
+      "english": "Stay in peace",
+      "kind": "phrase",
+      "status": "needs-review",
+      "sources": [
+        "mr-pc-intro"
+      ],
+      "notes": "Letter after 'jam' hard to read; recheck"
+    },
+    {
+      "id": "leave-taking-aamin",
+      "pulaar": "Aamin!",
+      "english": "Amen!",
+      "kind": "response",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "leave-taking-haa-jango-subaka",
+      "pulaar": "Haa jaŋngo subaka",
+      "english": "See you in the morning",
+      "kind": "phrase",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "leave-taking-haa-kikiie",
+      "pulaar": "Haa kikiiɗe",
+      "english": "See you in the afternoon",
+      "kind": "phrase",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "leave-taking-hedde-naange-hoore",
+      "pulaar": "Hedde naange-hoore",
+      "english": "See you around noon",
+      "kind": "phrase",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "leave-taking-haa-jamma",
+      "pulaar": "Haa jamma",
+      "english": "See you in the evening",
+      "kind": "phrase",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "leave-taking-haa-jango",
+      "pulaar": "Haa jaŋngo",
+      "english": "See you tomorrow",
+      "kind": "phrase",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "leave-taking-o-e-ooyde",
+      "pulaar": "Ɗo e ɓooyde",
+      "english": "See you soon",
+      "kind": "phrase",
+      "status": "needs-review",
+      "sources": [
+        "mr-pc-intro"
+      ],
+      "notes": "Initial letters hard to read; recheck"
+    },
+    {
+      "id": "leave-taking-o-e-yeeso",
+      "pulaar": "Ɗo e yeeso",
+      "english": "See you later",
+      "kind": "phrase",
+      "status": "needs-review",
+      "sources": [
+        "mr-pc-intro"
+      ],
+      "notes": "Initial letter hard to read; recheck"
+    }
+  ]
+}

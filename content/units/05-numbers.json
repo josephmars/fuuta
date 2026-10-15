@@ -1,0 +1,268 @@
+{
+  "id": "numbers",
+  "title": "Numbers 1-20",
+  "order": 5,
+  "description": "Counting, prices and quantities. Larger numbers are not yet in a Mauritanian source.",
+  "items": [
+    {
+      "id": "numbers-goo",
+      "pulaar": "Goo",
+      "english": "One (1)",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ],
+      "tags": [
+        "number"
+      ]
+    },
+    {
+      "id": "numbers-ii",
+      "pulaar": "Ɗiɗi",
+      "english": "Two (2)",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ],
+      "tags": [
+        "number"
+      ]
+    },
+    {
+      "id": "numbers-tati",
+      "pulaar": "Tati",
+      "english": "Three (3)",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ],
+      "tags": [
+        "number"
+      ]
+    },
+    {
+      "id": "numbers-nayi",
+      "pulaar": "Nayi",
+      "english": "Four (4)",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ],
+      "tags": [
+        "number"
+      ]
+    },
+    {
+      "id": "numbers-joyi",
+      "pulaar": "Joyi",
+      "english": "Five (5)",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ],
+      "tags": [
+        "number"
+      ]
+    },
+    {
+      "id": "numbers-jeegom",
+      "pulaar": "Jeegom",
+      "english": "Six (6)",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ],
+      "tags": [
+        "number"
+      ]
+    },
+    {
+      "id": "numbers-jeeii",
+      "pulaar": "Jeeɗiɗi",
+      "english": "Seven (7)",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ],
+      "tags": [
+        "number"
+      ]
+    },
+    {
+      "id": "numbers-jeetati",
+      "pulaar": "Jeetati",
+      "english": "Eight (8)",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ],
+      "tags": [
+        "number"
+      ]
+    },
+    {
+      "id": "numbers-jeenayi",
+      "pulaar": "Jeenayi",
+      "english": "Nine (9)",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ],
+      "tags": [
+        "number"
+      ]
+    },
+    {
+      "id": "numbers-sappo",
+      "pulaar": "Sappo",
+      "english": "Ten (10)",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ],
+      "tags": [
+        "number"
+      ]
+    },
+    {
+      "id": "numbers-sappo-e-goo",
+      "pulaar": "Sappo e goo",
+      "english": "Eleven (11)",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ],
+      "tags": [
+        "number"
+      ]
+    },
+    {
+      "id": "numbers-sappo-e-ii",
+      "pulaar": "Sappo e ɗiɗi",
+      "english": "Twelve (12)",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ],
+      "tags": [
+        "number"
+      ]
+    },
+    {
+      "id": "numbers-sappo-e-tati",
+      "pulaar": "Sappo e tati",
+      "english": "Thirteen (13)",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ],
+      "tags": [
+        "number"
+      ]
+    },
+    {
+      "id": "numbers-sappo-e-nayi",
+      "pulaar": "Sappo e nayi",
+      "english": "Fourteen (14)",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ],
+      "tags": [
+        "number"
+      ]
+    },
+    {
+      "id": "numbers-sappo-e-joyi",
+      "pulaar": "Sappo e joyi",
+      "english": "Fifteen (15)",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ],
+      "tags": [
+        "number"
+      ]
+    },
+    {
+      "id": "numbers-sappo-e-jeegom",
+      "pulaar": "Sappo e jeegom",
+      "english": "Sixteen (16)",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ],
+      "tags": [
+        "number"
+      ]
+    },
+    {
+      "id": "numbers-sappo-e-jeeii",
+      "pulaar": "Sappo e jeeɗiɗi",
+      "english": "Seventeen (17)",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ],
+      "tags": [
+        "number"
+      ]
+    },
+    {
+      "id": "numbers-sappo-e-jeetati",
+      "pulaar": "Sappo e jeetati",
+      "english": "Eighteen (18)",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ],
+      "tags": [
+        "number"
+      ]
+    },
+    {
+      "id": "numbers-sappo-e-jeenayi",
+      "pulaar": "Sappo e jeenayi",
+      "english": "Nineteen (19)",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ],
+      "tags": [
+        "number"
+      ]
+    },
+    {
+      "id": "numbers-noogaas",
+      "pulaar": "Noogaas",
+      "english": "Twenty (20)",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ],
+      "tags": [
+        "number"
+      ]
+    }
+  ]
+}

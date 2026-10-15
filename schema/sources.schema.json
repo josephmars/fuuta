@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Sources",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["id", "title", "region", "provenance"],
+    "properties": {
+      "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+      "title": {"type": "string"},
+      "region": {"enum": ["mauritania", "gambia", "senegal", "guinea", "other"]},
+      "provenance": {"enum": ["user-supplied", "native-speaker", "web", "book"]},
+      "year": {"type": "integer"},
+      "local_file": {"type": "string"},
+      "url": {"type": "string"},
+      "notes": {"type": "string"}
+    }
+  }
+}

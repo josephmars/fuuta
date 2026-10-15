@@ -1,0 +1,19 @@
+[
+  {
+    "id": "mr-pc-intro",
+    "title": "Introduction to Pulaar - Peace Corps/Mauritania (P.DOT Pulaar Lessons, 10 lessons)",
+    "region": "mauritania",
+    "provenance": "user-supplied",
+    "local_file": "sources/files/MR_Pulaar_Language_Lessons.pdf",
+    "notes": "Text extraction drops the implosives and eng (ɓ ɗ ŋ ƴ), so entries were transcribed from the rendered pages. Pages were checked at low resolution; items with ambiguous letters are marked needs-review."
+  },
+  {
+    "id": "gm-pc-tape-2013",
+    "title": "Peace Corps The Gambia, Pre-service Training, Pulaar Language Tape Script (5/3/2013)",
+    "region": "gambia",
+    "provenance": "user-supplied",
+    "year": 2013,
+    "local_file": "sources/files/Peace Corps- Pulaar Course.pdf",
+    "notes": "Gambian Pulaar. Cross-check only: nothing sourced solely from here may be marked verified. Spelling and phrasing differ from the Mauritanian course."
+  }
+]

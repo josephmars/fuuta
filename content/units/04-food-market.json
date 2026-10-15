@@ -1,0 +1,238 @@
+{
+  "id": "food-market",
+  "title": "Food, drink and the market",
+  "order": 4,
+  "description": "Ordering, buying and household items.",
+  "items": [
+    {
+      "id": "food-market-ndiyam",
+      "pulaar": "Ndiyam",
+      "english": "Water",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "food-market-ataaye",
+      "pulaar": "Ataaye",
+      "english": "Tea",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "food-market-kafe",
+      "pulaar": "Kafe",
+      "english": "Coffee",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "food-market-kosam",
+      "pulaar": "Kosam",
+      "english": "Milk",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "food-market-suukara",
+      "pulaar": "Suukara",
+      "english": "Sugar",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "food-market-lamam",
+      "pulaar": "Lamɗam",
+      "english": "Salt",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "food-market-maaro",
+      "pulaar": "Maaro",
+      "english": "Rice",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "food-market-liingu",
+      "pulaar": "Liingu",
+      "english": "Fish",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "food-market-teew",
+      "pulaar": "Teew",
+      "english": "Meat",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "food-market-jeere",
+      "pulaar": "Jeere",
+      "english": "Market",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "food-market-bitik",
+      "pulaar": "Bitik",
+      "english": "Shop",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "food-market-palaat",
+      "pulaar": "Palaat",
+      "english": "A plate",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "food-market-kuddu",
+      "pulaar": "Kuddu",
+      "english": "A spoon",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "food-market-lai",
+      "pulaar": "Laɓi",
+      "english": "A knife",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "food-market-mi-heyi",
+      "pulaar": "Mi heyɗi",
+      "english": "I am hungry",
+      "kind": "phrase",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "food-market-mi-heyaani",
+      "pulaar": "Mi heyɗaani",
+      "english": "I am not hungry",
+      "kind": "phrase",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "food-market-mi-omii",
+      "pulaar": "Mi ɗomɗii",
+      "english": "I am thirsty",
+      "kind": "phrase",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "food-market-mi-omaani",
+      "pulaar": "Mi ɗomɗaani",
+      "english": "I am not thirsty",
+      "kind": "phrase",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "food-market-mi-yiaa-kafe",
+      "pulaar": "Mi yiɗaa kafe",
+      "english": "I don't like coffee",
+      "kind": "phrase",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "food-market-leeso",
+      "pulaar": "Leeso",
+      "english": "A mat",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "food-market-mbajju",
+      "pulaar": "Mbajju",
+      "english": "A blanket",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "food-market-comci",
+      "pulaar": "Comci",
+      "english": "Clothes",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    },
+    {
+      "id": "food-market-pae",
+      "pulaar": "Paɗe",
+      "english": "Shoes",
+      "kind": "word",
+      "status": "verified",
+      "sources": [
+        "mr-pc-intro"
+      ]
+    }
+  ]
+}
