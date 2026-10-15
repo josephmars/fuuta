@@ -12,3 +12,4 @@ Mauritanian Pulaar phrase/lesson PWA for a trip. Content lives in `content/`, no
 - UI style follows the Dialect app: olive green, warm cream, gold accent, big bold card text, bottom tab bar.
 - Docs as code: keep `docs/` (architecture, data-catalog, adr/, guides/) updated in the same commit as the change. Schema or storage change: update `docs/data-catalog.md`. Hard-to-reverse decision: add a numbered ADR in `docs/adr/`.
 - Native-speaker review: `uv run tools/review.py` (checklist) and `uv run tools/confirm.py --source ID ITEM...`. See `docs/guides/native-speaker-review.md`. Glosbe and other multi-country dictionaries are leads only (`docs/guides/using-external-dictionaries.md`).
+- Brand assets are generated, not hand-edited: `uv run tools/make_brand.py` (see `docs/guides/brand-assets.md`).

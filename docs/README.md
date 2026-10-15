@@ -7,7 +7,7 @@ Documentation lives in the repo and changes in the same commit as the code it de
 | [architecture.md](architecture.md) | How content, tooling and the app fit together |
 | [data-catalog.md](data-catalog.md) | Every data source and its schema |
 | [adr/](adr/) | Architectural Decision Records, numbered, never rewritten (supersede instead) |
-| [guides/](guides/) | How-tos: adding content, running and deploying |
+| [guides/](guides/) | How-tos: adding content, running and deploying, brand assets, native-speaker review |
 
 ## Rules
 - Change a schema, data shape or storage key: update `data-catalog.md`.

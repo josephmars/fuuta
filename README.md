@@ -1,3 +1,5 @@
+<p align="center"><img src="design/logo.svg" alt="Fuuta, learn Mauritanian Pulaar" width="260"></p>
+
 # Fuuta
 
 Offline-first PWA for learning everyday Mauritanian Pulaar (greetings, host family, food and market), with French/Hassaniya fallback phrases.

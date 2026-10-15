@@ -81,7 +81,8 @@ function buildQueue(unitId) {
 function learnView() {
   const due = buildQueue(null);
   const nDue = due.filter(i => S.cards[i.id]).length, nNew = due.length - nDue;
-  return `${header("Learn", "Flashcards")}
+  return `<img class="logo" src="icons/logo.svg" alt="Fuuta, learn Mauritanian Pulaar" width="220" height="220">
+    ${header("Learn", "Flashcards")}
     <div class="card"><div class="lab">Today</div>
       <div class="big">${due.length ? due.length + " cards" : "All done"}</div>
       <div class="rule"></div>

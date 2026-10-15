@@ -28,7 +28,7 @@ flowchart LR
 | Review tools | `tools/review.py`, `tools/confirm.py` | Export a checklist for a native speaker; record their confirmations/corrections |
 | Builder | `tools/build.py` | Runs the validator, drops `unverified` items and `variants`, writes `app/data.json` |
 | Deploy | `.github/workflows/pages.yml` | Builds and publishes `app/` to GitHub Pages on push to `main` ([ADR 0005](adr/0005-github-pages-hosting.md)) |
-| Icons | `tools/make_icons.py` | Dependency-free PNG icon generation |
+| Brand assets | `tools/make_brand.py` | Builds `design/*.svg` and `app/icons/*` (icons, maskable, favicon, logo) from one script |
 | App | `app/` | `index.html`, `styles.css`, `app.js`, `sw.js`, manifest |
 
 ## App views

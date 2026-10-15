@@ -4,3 +4,6 @@ version = "0.1.0"
 description = "Fuuta: Mauritanian Pulaar learning PWA, content and tooling"
 requires-python = ">=3.11"
 dependencies = ["jsonschema>=4.21"]
+
+[dependency-groups]
+dev = ["pillow>=10", "fonttools>=4.50"]

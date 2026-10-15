@@ -129,3 +129,5 @@ a:not(.btn):not(.back) { color: var(--olive-d); font-weight: 700; }
 .empty .sub { margin-bottom: 4px; }
 body:has(.sheet) main { padding-bottom: 220px; }
 .badge.ok { background: var(--ok-bg); color: var(--ok); }
+
+.logo { display: block; margin: -26px auto -30px; width: 200px; height: 200px; }
